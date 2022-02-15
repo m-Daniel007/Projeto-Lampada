@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Lampada</title>
+    <style>
+        body{
+            background-color: black;
+            
+        }
+        header, .main{
+            color: #fff;
+            text-align: center;
+            padding: 5px;
+            font-size: 20px;
+            display: flex;
+            flex-direction: column;
+            
+            
+        }
+            
+       button{
+           width: 80px;
+           cursor: pointer;
+        }
+        h1::after{
+           content: '|';
+           
+           margin-left: 10px;
+           opacity: 1;
+           animation: pisca .8s infinite;
+       }
+       @keyframes pisca{
+           0%, 100%{
+               opacity: 1;
+           }
+           50%{
+               opacity: 0;
+           }
+
+       }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Projeto Lampada</h1>
+    </header>
+    <div class="main">
+        <div>
+            <img id="imagem" onmouseover="ligarLamp()" onmouseout="desligarLamp()" ondblclick="isBroken()" src="Imagens/desligada.jpg" alt="desligada" id="desl">
+        </div>
+        <div>
+            <button  onclick="ligarLamp()" id="ligar">Ligar</button>
+            <button  onclick="desligarLamp()" id="desligar">Desligar</button>
+        </div>
+
+    </div>
+       
+      <script src="app.js"></script>
+</body>
+</html>
